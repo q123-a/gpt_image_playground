@@ -11,6 +11,7 @@ export interface DevProxyConfig {
 const DEFAULT_PROXY_PREFIX = '/api-proxy'
 
 export function normalizeBaseUrl(baseUrl: string): string {
+  if (baseUrl.startsWith('/')) return baseUrl
   const trimmed = baseUrl.trim()
   if (!trimmed) return ''
 
